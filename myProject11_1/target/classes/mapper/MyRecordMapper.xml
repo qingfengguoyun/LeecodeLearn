@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myProject11_1.mapper.MyRecordMapper">
+
+    <insert id="insertMyRecord" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into my_record (data,parent_id) values (#{data},#{parentId});
+    </insert>
+
+    <resultMap id="myRecordDtoMap" type="com.myProject11_1.models.dto.MyRecordDto" >
+        <id property="id" column="id"></id>
+        <result property="data" column="data"></result>
+        <result property="parentId" column="parent_id"></result>
+        <collection property="childs" ofType="com.myProject11_1.models.dto.MyRecordDto" select="getChildLayer" column="id"></collection>
+    </resultMap>
+
+    <select id="getChildLayer" parameterType="long" resultMap="myRecordDtoMap">
+        select * from my_record t where t.parent_id=#{id}
+    </select>
+
+    <select id="getTree" parameterType="long" resultMap="myRecordDtoMap">
+        select * from my_record t where t.id=#{id}
+    </select>
+
+</mapper>

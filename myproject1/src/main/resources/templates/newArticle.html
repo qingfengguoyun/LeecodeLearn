@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <link href="/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+</head>
+<body>
+<!--<div id="articleShow"></div>-->
+<div class="row"  style="border: 1px solid #e2e5e7;padding: 0px 0px;margin: 0px 0px">
+    <div class="wrapper wrapper-content" style="width: 100%">
+        <div class="ibox-content profile-content" style="overflow: hidden">
+            <h2>发布新主题</h2>
+        </div>
+        <div class="ibox-content profile-content" style="overflow: hidden">
+            <div>
+                <h3>标题</h3>
+                <input class="form-control newArticleTitle" type="text" name="newArticleTitle">
+            </div>
+            <div style="margin-top: 10px;overflow: hidden">
+                <h3>内容</h3>
+                <div class="article-summernote"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="wrapper wrapper-content" style="padding: 0px 10px;margin-top: -30px;width: 100%;">
+        <div class="ibox-content profile-content" style="overflow: hidden;width: 100%;display: inline-block">
+            <button type="button" class="btn btn-primary" style="display:inline-block;float: right;margin: 0px 10px" onclick="admitArticle()">提交</button>
+            <button type="button" class="btn btn-white" style="display:inline-block;float: right;margin: 0px 10px" onclick="queryAllArticlesView()">取消</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- Mainly scripts -->
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- SUMMERNOTE -->
+<script src="/js/plugins/summernote/summernote.min.js"></script>
+
+<script src="/js/myjs/articleList.js"></script>
+<script>
+    $(function () {
+        $(".article-summernote").summernote(
+            {
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol']],
+                    ['insert', ['picture']]
+                ],
+                focus:true,
+                // 重写图片上传与回显方法
+                onImageUpload:function (files,editor,welEditable) {
+                    saveArticleImage(files,editor,welEditable);
+                },
+            }
+        );
+    });
+
+
+    // function saveArticleImage(files,editor, welEditable) {
+    //     var data = new FormData();
+    //     data.append("file",files[0]);
+    //     $.ajax({
+    //         data:data,
+    //         type:"POST",
+    //         url:"/article/saveArticleImage",
+    //         cache:false,
+    //         contentType:false,
+    //         processData: false,
+    //
+    //         success:function (url) {
+    //             console.log(url);
+    //             editor.insertImage(welEditable,url,'img');
+    //         }
+    //     })
+    // }
+    //
+    // function admitArticle() {
+    //     //获取富文本输入框的内容
+    //     var articleContent=$('.article-summernote').code()
+    //     var data={};
+    //     //从界面的隐藏div中获取userId
+    //     var userId=$("#userId").attr("userId");
+    //     data['userId']=userId;
+    //     console.log("userId"+$("#userId").attr("userId"))
+    //     //获取主题Title
+    //     data['articleTitle']=$(".newArticleTitle").val();
+    //     //获取主题的Content
+    //     data['articleContent']=articleContent;
+    //     //转化为json字符串
+    //     data=JSON.stringify(data);
+    //     $.ajax({
+    //         type:"POST",
+    //         url:"/article/insertArticle",
+    //         data:data,
+    //         contentType: "application/json",
+    //         success:function (res) {
+    //             console.log(res.code);
+    //         }
+    //     })
+    //     //提交完成后显示文章列表
+    //     queryAllArticlesView();
+    // }
+
+</script>

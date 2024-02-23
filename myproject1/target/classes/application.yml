@@ -1,0 +1,62 @@
+server:
+  port: 8084
+
+spring:
+#  servlet.multipart 设置单次上传文件的最大大小
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  application:
+    name: myblog-consumer
+  thymeleaf:
+    cache: false
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+  session:
+    store-type: redis
+    timeout: 3600
+#  设置静态资源路径
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${commentImageLocation},file:${articleImageLocation}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+feign:
+  hystrix:
+    enabled: true
+# 配置hystrix熔断时间
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+#配置ribbon的响应时间（小于hytrix的熔断时间）
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+
+commentImageLocation:
+  G:/commentImage/
+commentImageUrl:
+  /commentImage/
+articleImageLocation:
+  G:/articleImage/
+articleImageUrl:
+  /articleImage/
+#上传文件存储位置
+fileLocation:
+  G:/blogFile/
+
+
+
+
+

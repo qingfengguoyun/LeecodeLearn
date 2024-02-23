@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="myProject1" />
+        <module name="myProjectSocetPractice" />
+        <module name="myProject11_24" />
+        <module name="myProjectViewTest" />
+        <module name="myProject11_1" />
+        <module name="myProjectRabbitMqConfig" />
+        <module name="myProject_2024_1_10" />
+        <module name="myBaseUtils" />
+        <module name="myProjectRedisPractice" />
+        <module name="myProject10_10" />
+        <module name="myProjectRabbitMQLearn" />
+        <module name="myProjectRabbitMQConsumer" />
+        <module name="myProject_2024_02_08" />
+        <module name="myProjectSummery01_24" />
+        <module name="myProjectSocektLearn" />
+        <module name="myProject9_25" />
+        <module name="myProject9_21" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="myBaseUtils" target="1.5" />
+      <module name="myProject1" target="1.8" />
+      <module name="myProject10_10" target="1.8" />
+      <module name="myProject11_1" target="1.8" />
+      <module name="myProject11_24" target="1.8" />
+      <module name="myProject9_21" target="1.8" />
+      <module name="myProject9_25" target="1.8" />
+      <module name="myProject_2024_02_08" target="1.8" />
+      <module name="myProject_2024_1_10" target="1.8" />
+      <module name="myProjectRabbitMqConfig" target="1.8" />
+      <module name="myProjectRabbitMQConsumer" target="1.8" />
+      <module name="myProjectRabbitMQLearn" target="1.8" />
+      <module name="myProjectRedisPractice" target="1.8" />
+      <module name="myProjectSocektLearn" target="1.8" />
+      <module name="myProjectSocetPractice" target="1.8" />
+      <module name="myProjectSummery01_24" target="1.8" />
+      <module name="myProjectViewTest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="myProject1" options="-parameters" />
+      <module name="myProject10_10" options="-parameters" />
+      <module name="myProject11_1" options="-parameters" />
+      <module name="myProject11_24" options="-parameters" />
+      <module name="myProject9_21" options="-parameters" />
+      <module name="myProject9_25" options="-parameters" />
+      <module name="myProjectRabbitMQConsumer" options="-parameters" />
+      <module name="myProjectRabbitMQLearn" options="-parameters" />
+      <module name="myProjectRabbitMqConfig" options="-parameters" />
+      <module name="myProjectRedisPractice" options="-parameters" />
+      <module name="myProjectSocektLearn" options="-parameters" />
+      <module name="myProjectSocetPractice" options="-parameters" />
+      <module name="myProjectSummery01_24" options="-parameters" />
+      <module name="myProjectViewTest" options="-parameters" />
+      <module name="myProject_2024_02_08" options="-parameters" />
+      <module name="myProject_2024_1_10" options="-parameters" />
+    </option>
+  </component>
+</project>

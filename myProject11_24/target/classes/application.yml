@@ -1,0 +1,23 @@
+server:
+  port: 8024
+spring:
+  application:
+    name: myProject11_24
+  datasource:
+    url: "jdbc:mysql://localhost:3306/myDataBase11_24?\
+    createDatabaseIfNotExist=true\
+    &serverTimezone=Asia/Shanghai\
+    &useUnicode=true\
+    &characterEncoding=UTF-8"
+    username: root
+    password: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+    sqlScriptEncoding: utf-8
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #数据库下划线自动转驼峰

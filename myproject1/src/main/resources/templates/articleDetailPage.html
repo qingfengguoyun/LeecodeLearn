@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Dashboard v.2</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <link href="/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+<!--    滑动条样式-->
+    <link href="/css/scroll.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+<div id="wrapper" >
+    <!--    记录登录用户信息-->
+    <span th:if="${session.loginUser!=null}">
+        <!--    隐藏div保存登录用户的ID-->
+        <div id="userId" th:attrappend="userId=${session.loginUser.userId}" hidden="hidden"></div>
+    </span>
+    <span id="articleId" th:attrappend="articleId=${articleId}" hidden="hidden"></span>
+
+    <!--    左侧列表-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <span th:if="${session.loginUser!=null}">
+                            <img alt="image" class="img-circle" style="width: 48px" th:src="'/img/'+${session.loginUser.userPhoto}"/>
+                        </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold" th:text="${session.loginUser!=null?session.loginUser.userName:'未登录'}"></strong>
+                             </span>  </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">个人信息</a></li>
+                            <li><a href="contacts.html">联系方式</a></li>
+                            <li><a href="mailbox.html">邮箱</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/user/userLogout">退出登录</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">首页</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="#" onclick="queryArticleByPageNo(1);return false;">查看主题帖</a></li>
+                        <li><a href="#" onclick="newArticle();return false;">发表新帖</a></li>
+                        <!--                        <li class="active"><a href="#" onclick="return false;">发表新帖</a></li>-->
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">个人信息管理</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="#" onclick="toChangeUserInfo();return false;">修改个人信息</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">资源站</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="#" onclick="return false;">上传文件</a></li>
+                        <li><a href="#" onclick="return false;">下载文件</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">布局</span></a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <!--    上边栏-->
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
+                    </a>
+                    <form role="search" class="navbar-form-custom" action="#" onsubmit="recordSearchElement();return false;">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control"
+                                   name="top-search" id="top-search">
+                        </div>
+                    </form>
+                    <!--                    用于记录搜索内容的隐藏span-->
+                    <span id="searchRecord" hidden="hidden" searchRecord=""></span>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">欢迎来到goopay</span>
+                        <span th:text="${session.loginUser!=null?session.loginUser.userName:'未登录'}"></span>
+
+                    </li>
+                    <li>
+                        <a href="/user/userLogout">
+                            <i class="fa fa-sign-out"></i>
+                            <span th:text="${session.loginUser!=null?'退出登录':'返回登录'}"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="right-sidebar-toggle">
+                            <i class="fa fa-tasks"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+<!--        具体展示部分-->
+        <div class="wrapper wrapper-content" id="articleShow" th:if="${session.loginUser!=null}">
+
+        </div>
+<!--        summernote-->
+
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> goopay &copy; 2014-2015
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Mainly scripts -->
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="/js/inspinia.js"></script>
+<script src="/js/plugins/pace/pace.min.js"></script>
+
+<!-- SUMMERNOTE -->
+<script src="/js/plugins/summernote/summernote.min.js"></script>
+
+<!--评论换页脚本-->
+<script src="/js/myjs/showComments.js"></script>
+
+<!--评论提交脚本-->
+<script src="/js/myjs/admitComment.js"></script>
+
+<!--serializeArray转json字符串的方法-->
+<script src="/js/myjs/parseJson.js"></script>
+
+<!--展示所有博文与博文换页脚本(左侧边栏通用)-->
+<script src="/js/myjs/articleList.js"></script>
+
+<!--左侧边栏脚本-->
+<script src="/js/myjs/leftBanner.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        var articleShow=$("#articleShow");
+        var articleId=$("#articleId").attr("articleId");
+        var data={};
+        data["articleId"]=articleId;
+        $.get("/article/showArticle",data,function (html) {
+            articleShow.html(html);
+
+        })
+
+    })
+</script>
+
+
+</body>
+</html>
