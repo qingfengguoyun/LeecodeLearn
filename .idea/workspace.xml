@@ -46,7 +46,9 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="2VEJD7vLs4qeXZh0RQ2rfmVLVnR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -107,13 +109,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.P77Learn">
-    <configuration name="MyProjectSummery01_24_Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.myProjectSummery01_24.MyProjectSummery01_24_Application" />
-      <module name="myProjectSummery01_24" />
+  <component name="RunManager" selected="Application.P47Try">
+    <configuration name="ObjectSizeExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.ObjectSizeExample" />
+      <module name="myStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.myProjectSummery01_24.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,8 +123,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="P17Try" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="learn.reverse.P17Try" />
+    <configuration name="P46Try" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.reverse.P46Try" />
+      <module name="myStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.reverse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="P47Try" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.reverse.P47Try" />
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
@@ -147,23 +162,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="P77Try" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="learn.reverse.P77Try" />
+    <configuration name="Test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.Test2" />
       <module name="myStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.reverse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReferenceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.ReferenceTest" />
-      <module name="myStudy" />
-      <option name="VM_PARAMETERS" value="-XX:+PrintGC -XX:+PrintGCDateStamps" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -175,19 +176,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MyProjectSummery01_24_Application" />
-      <item itemvalue="Application.ReferenceTest" />
-      <item itemvalue="Application.P77Try" />
       <item itemvalue="Application.P77Learn" />
-      <item itemvalue="Application.P17Try" />
+      <item itemvalue="Application.ObjectSizeExample" />
+      <item itemvalue="Application.P46Try" />
+      <item itemvalue="Application.Test2" />
+      <item itemvalue="Application.P47Try" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.P47Try" />
+        <item itemvalue="Application.P46Try" />
         <item itemvalue="Application.P77Learn" />
-        <item itemvalue="Application.P17Try" />
-        <item itemvalue="Application.P77Try" />
-        <item itemvalue="Application.ReferenceTest" />
-        <item itemvalue="Application.MyProjectSummery01_24_Application" />
+        <item itemvalue="Application.Test2" />
+        <item itemvalue="Application.ObjectSizeExample" />
       </list>
     </recent_temporary>
   </component>
@@ -624,6 +625,26 @@
           <url>file://$PROJECT_DIR$/myStudy/src/learn/P77Learn.java</url>
           <line>20</line>
           <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/myStudy/src/learn/reverse/P46Try.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/myStudy/src/learn/reverse/P46Try.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/myStudy/src/learn/reverse/P47Try.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/myStudy/src/learn/reverse/P47Try.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="160" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
