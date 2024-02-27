@@ -49,7 +49,7 @@ public class P47Try {
     public static void main(String[] args) {
         P47Try P47Try=new P47Try();
 
-        int[] nums=new int[]{1,2,3};
+        int[] nums=new int[]{2,2,3};
 //        P47Try.initMap(nums);
         List<List<Integer>> res = P47Try.permuteUnique(nums);
         res.stream().forEach(t->{
