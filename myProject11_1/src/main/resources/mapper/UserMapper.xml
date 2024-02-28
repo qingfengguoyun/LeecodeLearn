@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myProject11_1.mapper.UserMapper">
+
+    <select id="selectAllUsers" resultType="com.myProject11_1.entity.User">
+        select * from user t
+    </select>
+
+    <select id="selectAllUserDtos" resultType="com.myProject11_1.models.dto.UserDto">
+        select * from user t
+    </select>
+
+    <insert id="insertUserInBatch" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into user (`name`,`age`) values
+        <foreach collection="list" separator="," item="user">
+            (#{user.name},#{user.age})
+        </foreach>
+    </insert>
+
+
+
+</mapper>

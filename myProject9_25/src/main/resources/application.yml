@@ -1,0 +1,30 @@
+server:
+  port: 8086
+spring:
+  datasource:
+    url:
+      "jdbc:mysql://localhost:3306/myDataBase?\
+      createDatabaseIfNotExist=true\
+      &serverTimezone=Asia/Shanghai\
+      &characterEncoding=UTF-8"
+    username: root
+    password: mysql
+  application:
+    name: MyPorject9_25
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-consumer-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+
+
