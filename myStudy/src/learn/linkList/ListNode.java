@@ -19,7 +19,7 @@ public class ListNode {
     ListNode(int val) { this.val = val; }
      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
-     public static ListNode initListNode (Integer[] array){
+     public static ListNode initListNode (int[] array){
          ListNode empHead=new ListNode();
          ListNode point=empHead;
          for(Integer i:array){
@@ -29,6 +29,17 @@ public class ListNode {
          }
          return empHead.next;
      }
+
+    public static ListNode initListNode (Integer[] array){
+        ListNode empHead=new ListNode();
+        ListNode point=empHead;
+        for(Integer i:array){
+            ListNode node = new ListNode(i);
+            point.next=node;
+            point=node;
+        }
+        return empHead.next;
+    }
 
     public int getVal() {
         return val;
@@ -44,5 +55,12 @@ public class ListNode {
 
     public void setNext(ListNode next) {
         this.next = next;
+    }
+
+    public static void print(ListNode node){
+         while(node!=null){
+             System.out.print(node.val+" ");
+             node=node.next;
+         }
     }
 }

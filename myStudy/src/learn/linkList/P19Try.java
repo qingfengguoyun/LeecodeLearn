@@ -25,7 +25,7 @@ public class P19Try {
 
     public static void main(String[] args) {
         P19Try p19Try=new P19Try();
-        Integer[] array=new Integer[]{1,2,3,4,5};
+        int[] array=new int[]{1,2,3,4,5};
         ListNode listNode = ListNode.initListNode(array);
         ListNode listNode1 = p19Try.removeNthFromEnd(listNode, 2);
         System.out.println(listNode1);
