@@ -22,6 +22,7 @@ public class P39Try {
                 fun(term,datas,i,target);
                 target+=datas[i];
                 term.remove(term.size()-1);
+//                添加循环跳出条件，减少循环次数
                 if(target-datas[i]<=0){
                     break;
                 }
