@@ -55,13 +55,16 @@ public class MyAspect {
     }
 
     @Around("pointCut2()")
-    public void around2(ProceedingJoinPoint proceedingJoinPoint){
+    public Object around2(ProceedingJoinPoint proceedingJoinPoint){
         log.info("基于annotation的环绕切片开始");
         try {
-            proceedingJoinPoint.proceed();
+            Object proceed = proceedingJoinPoint.proceed();
+            log.info("基于annotation的环绕切片结束");
+            return proceed;
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
         log.info("基于annotation的环绕切片结束");
+        return null;
     }
 }

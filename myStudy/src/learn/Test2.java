@@ -29,8 +29,13 @@ public class Test2 {
         System.out.println(i1-i2);
     }
 
+    public void test3(){
+        String str="DevelopmentAnalog";
+        System.out.println(str.contains("Analog"));
+    }
+
     public static void main(String[] args) {
         Test2 test2=new Test2();
-        test2.test();
+        test2.test3();
     }
 }
